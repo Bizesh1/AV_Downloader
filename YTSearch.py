@@ -50,7 +50,7 @@ class YTSearch:
             print(f"You chose: {self.results[choice - 1].get("Title")}")
             print(f"URL: {Usr_choice_URL}")
 
-            #return Usr_choice_URL
+            return Usr_choice_URL
 
 
 
