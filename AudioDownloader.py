@@ -20,9 +20,9 @@ class AudioDownloader(Downloader):
 
 
 # -----Testing-----
-def main():
-    A = AudioDownloader("https://www.youtube.com/watch?v=Aq5WXmQQooo")
-    A.download()
+# def main():
+#     A = AudioDownloader("https://www.youtube.com/watch?v=Aq5WXmQQooo")
+#     A.download()
 
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     main()
