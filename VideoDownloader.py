@@ -7,7 +7,7 @@ class VideoDownloader(Downloader):
     
     def build_options(self):
         options = super().build_options()
-        options["format"] = "bestvideo+bestaudio"
+        options["format"] = "bestvideo+bestaudio[ext=m4a]/bestvideo+bestaudio/best"
         options["merge_output_format"] = "mp4"
         return options
 
