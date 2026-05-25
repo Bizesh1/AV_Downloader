@@ -1,7 +1,11 @@
 import yt_dlp as yt
 
 class YTSearch:
-    def __init__(self, query, max_result = 3):
+    def __init__(self, query=None, max_result = 5):
+
+        if query is None:
+            query = input("Search in Youtube: ")
+
         self.query = query
         self.max_result = max_result
         self.results = []
@@ -41,30 +45,38 @@ class YTSearch:
 
 
     def user_choice(self):
-        print("\n")
-        choice = int(input(f"Enter your choice (1 - {self.max_result}): "))
-        if 1 <= choice <= self.max_result:
+        while True:
+            try:
+                choice = int(input(f"Enter your choice (1 - {self.max_result}): "))
+                if 1 <= choice <= self.max_result:
 
-            Usr_choice_URL = self.results[choice - 1].get("URL")
+                    Usr_choice_URL = self.results[choice - 1].get("URL")
 
-            print(f"You chose: {self.results[choice - 1].get("Title")}")
-            print(f"URL: {Usr_choice_URL}")
+                    print("\n")
+                    print(f"You chose: {self.results[choice - 1].get("Title")}")
+                    print("\n")
 
-            return Usr_choice_URL
+                    return Usr_choice_URL
+                else:
+                    print(f"Choose from 1-{self.max_result} please!\n")
+            
+            except:
+                ValueError, TypeError
+                print("Oops! You didnt enter a Number.\n")
 
 
 
 
 
 #---- Testing ----
-def main():
-   query = input("Search YouTube: ")
-   A = YTSearch(query)
-   A.search()
-   A.display_search_results()
-   A.user_choice()
+# def main():
+#    query = input("Search YouTube: ")
+#    A = YTSearch(query)
+#    A.search()
+#    A.display_search_results()
+#    A.user_choice()
 
-if __name__ == "__main__":
-   main()
+# if __name__ == "__main__":
+#    main()
 
 

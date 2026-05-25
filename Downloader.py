@@ -19,5 +19,10 @@ class Downloader(ABC):
         
     def download(self): 
         with yt.YoutubeDL(self.build_options()) as ydl:
-            ydl.download([self.URL])
-            print("Download Complete.")
+            try:
+                ydl.download([self.URL])
+                print("Download Complete.")
+            except:
+                Exception
+                print("Not a valid URL\n")
+                return False
