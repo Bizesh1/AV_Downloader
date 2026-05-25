@@ -61,7 +61,7 @@ class YTSearch:
                     print(f"Choose from 1-{self.max_result} please!\n")
             
             except:
-                ValueError, TypeError
+                ValueError, TypeError, Exception
                 print("Oops! You didnt enter a Number.\n")
 
 
